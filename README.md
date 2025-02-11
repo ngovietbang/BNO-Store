@@ -1,1 +1,1 @@
-# BNO-Strore
+# BNO-Store
