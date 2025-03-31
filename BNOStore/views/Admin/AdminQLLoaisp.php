@@ -63,6 +63,44 @@ session_start();
             <div class="model_loaisp">
                 <!--nut close-->
                 <span class="close">&times;</span>
+                <!--tim kiem loai sp-->
+                <form action="index.php?action=TimKiemLoaisp" method="post" class="admin-tim-kiem" id="form_search">
+                    <input id="search" type="text" placeholder="Nhập loại sản phẩm cần tìm kiếm" class="input-timkiem" name="timkiemloaisp" />
+                    <button class="bt-timkiem" id="bt_search" type="submit">Tìm kiếm</button>
+                </form>
+                <!--scritp tim kiem loaisp-->
+                <!--<script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        let searchForm = document.getElementById("form_search");
+                        let searchInput = document.getElementById("search");
+                        let resultList = document.getElementById("show_loaisp");
+                        let resultList2 = document.getElementById("pagination-container");
+
+                        searchForm.onsubmit = function (e) {
+                            e.preventDefault(); // Chặn tải lại trang
+
+                            let keyword = searchInput.value.trim();
+
+                            if (keyword.length > 0) {
+                                fetch("index.php?action=TimKiemLoaisp", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                    body: "keyword=" + encodeURIComponent(keyword)
+                                })
+                                    .then(response => response.text())
+                                    .then(result => {
+                                        resultList.innerHTML = result.trim() ? result : "<li>Không tìm thấy sản phẩm</li>";
+                                        resultList2.innerHTML = "";
+                                    })
+                                    .catch(error => console.error("Lỗi:", error));
+                            } else {
+                                resultList.innerHTML = "<li>Vui lòng nhập từ khóa!</li>";
+                                resultList2.innerHTML = "";
+                            }
+                        };
+                    });
+                </script>-->
+
                 <!--dữ liệu hiển thị loại sp-->
                 <div id="show_loaisp" class="show_loaisp">
                     <!---->
@@ -269,29 +307,28 @@ session_start();
                         });
                     });
 
-                    // submit form sửa loại sản phẩm bằng ajax
+                    // submit mo form sửa loại sản phẩm bằng ajax
                     document.getElementById("form-sualoaisp").addEventListener("submit", function (e) {
                         let formdata = new FormData(this);
-                        if(confirm("Xác nhận cập nhật loại sản phẩm này?")){
+                        if (confirm("Xác nhận cập nhật loại sản phẩm này?")) {
                             //update
-                        fetch("index.php?action=UpdateLoaisp", {
-                            method: "POST",
-                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                            body: formdata
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.success) {
-                                    alert("cập nhật thành công!");
-                                } else {
-                                    e.preventDefault();
-                                    alert("có lỗi xảy ra!");
-                                }
-                            });
-                            .catch(error => console.error("Lỗi:", error));
+                            fetch("index.php?action=UpdateLoaisp", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                body: formdata
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        alert("cập nhật thành công!");
+                                    } else {
+                                        e.preventDefault();
+                                        alert("có lỗi xảy ra!");
+                                    }
+                                })
+                                .catch(error => console.error("Lỗi:", error));
                         }
                     });
-
                 });
 
                 //script chọn ảnh
@@ -326,15 +363,15 @@ session_start();
 
     <!--script mở, đóng form loaisp-->
     <script>
-  //     //
-  //     document.getElementById("bt_loaisp").addEventListener("click", function () {
-  //         let modal = document.getElementById("loaisp");
-  //         modal.style.display = "flex"; // Hiển thị modal ngay nhưng opacity vẫn 0
-  //         setTimeout(() => {
-  //             modal.classList.add("show"); // Thêm class để chạy hiệu ứng
-  //         }, 1); // Chờ 10ms để đảm bảo display đã cập nhật
-  //     });
-  //
+        //     //
+        //     document.getElementById("bt_loaisp").addEventListener("click", function () {
+        //         let modal = document.getElementById("loaisp");
+        //         modal.style.display = "flex"; // Hiển thị modal ngay nhưng opacity vẫn 0
+        //         setTimeout(() => {
+        //             modal.classList.add("show"); // Thêm class để chạy hiệu ứng
+        //         }, 1); // Chờ 10ms để đảm bảo display đã cập nhật
+        //     });
+        //
         // Đóng modal khi nhấn vào dấu "X"
         document.querySelector(".close").addEventListener("click", function () {
             let modal = document.getElementById("loaisp");

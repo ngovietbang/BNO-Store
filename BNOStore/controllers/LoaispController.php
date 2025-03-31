@@ -73,9 +73,9 @@ class LoaispController{
             $anh = $target . basename($_FILES['anh']['name']);
             $loaisp->anh = $anh;
             // Xử lý ảnh
-            if (!empty($_FILES['anh']['name'])) {           
+            if (!empty($_FILES['anh']['name'])) {
                 // Kiểm tra và lưu file ảnh
-                if (move_uploaded_file($_FILES['anh']['tmp_name'], $anh)) {   
+                if (move_uploaded_file($_FILES['anh']['tmp_name'], $anh)) {
                     // Cập nhật ảnh vào database
                     $success = $loaisp->UpdateLoaispHaveImg($idLoaisp);
                     session_start();
@@ -92,4 +92,16 @@ class LoaispController{
             }
         }
     }
+
+    //tim kiem loai sp
+    public function TimKiemLoaisp(){
+        if($_SERVER['REQUEST_METHOD'] === "POST"){
+            if(isset($_POST['timkiemloaisp'])){
+                $loaisp = new Loaisanpham();
+                $keyword = trim($_POST['timkiemloaisp']);
+                return $loaisp->TimKiemLoaisp($keyword);
+            }
+        }
+    }
+
 }

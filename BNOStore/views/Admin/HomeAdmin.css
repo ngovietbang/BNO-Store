@@ -194,8 +194,43 @@ body {
         transition: ease 0.6s all;
         color: gray;
     }
+/*tim kiem*/
+.admin-tim-kiem{
+    display:flex;
+    margin:auto;
+    margin-top:29px;
+    margin-bottom:0;
+}
+.input-timkiem{
+    width:400px;
+    height:35px;
+    border-radius:10px;
+    border:1px solid #2e42c7;
+    outline:none;
+    text-indent:7px;
+    font-size:15px;
+    margin-right:5px;
+}
+.bt-timkiem{
+    width:90px;
+    height:34px;
+    color:white;
+    background-color:#da6122;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+    border:none;
+    margin:auto;
+    font-weight:bold;
+    margin-left:5px;
+}
+    .bt-timkiem:hover{
+        transition:ease 0.6s all;
+        background-color:#8d6a49
+    }
 /*show loaisp*/
 .show_loaisp {
+    margin-top:30px;
     display: grid;
     grid-gap: 30px;
     padding: 20px;

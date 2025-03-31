@@ -60,6 +60,11 @@ switch($action){
     case 'UpdateLoaisp':
         $loaispController->UpdateLoaisp();
         break;
+    //tim kiem loaisp
+    case 'TimKiemLoaisp':
+        $vloaisp = $loaispController->TimKiemLoaisp(); //hien thi loai sp
+        include('./views/Admin/AdminQLLoaisp.php');
+        break;
 
 
 
