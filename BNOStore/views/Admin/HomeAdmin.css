@@ -1,0 +1,455 @@
+﻿* {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: auto;
+}
+/*header*/
+.header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    margin: auto;
+}
+/*menu header*/
+.menu_header {
+    width: 350px;
+    margin: auto;
+    display: flex;
+    margin: auto;
+    margin-left: 40px;
+}
+
+.a_menu_header {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: ease 0.6s all;
+}
+
+    .a_menu_header::after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2.3px;
+        content: "";
+        background-color: #ffa827;
+        transition: ease 0.6s all;
+    }
+
+    .a_menu_header:hover {
+        color: #ffa827;
+    }
+
+        .a_menu_header:hover::after {
+            width: 100%;
+        }
+
+/*mennu header 2*/
+.menu_header_2 {
+    width: 190px;
+    margin: auto;
+    display: flex;
+}
+
+.a_menu_header_2 {
+    position: relative;
+    display: block;
+    margin: auto;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: ease 0.6s all;
+}
+
+    .a_menu_header_2::after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2.3px;
+        content: "";
+        background-color: #ffa827;
+        transition: ease 0.6s all;
+    }
+
+    .a_menu_header_2:hover {
+        color: #ffa827;
+    }
+
+        .a_menu_header_2:hover::after {
+            width: 100%;
+        }
+
+/*content*/
+.content {
+    display: flex;
+    width: 100%;
+    background: url('http://localhost:8080/BNOStore/views/HomeImage/image/ww.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-width: 98vw;
+    min-height: 100vh;
+}
+/*menu trai*/
+.menu_trai {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(45, 45, 45,0.9);
+}
+
+.logo-menu {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 10px
+}
+
+.bt_menu_trai {
+    color: white;
+    font-size: 16px;
+    display: block;
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 39px;
+    text-indent: 20px;
+    background: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-top: 0.5px solid rgb(117, 117, 117,0.5);
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+    .bt_menu_trai:hover {
+        background-color: #00ffff;
+        transition: ease 0.6s all;
+    }
+
+.menu-con {
+    background-color: gray;
+    border-bottom: 1px solid #00ffff;
+    border-left: 1px solid #00ffff;
+    border-right: 1px solid #00ffff;
+    font-size: 16px;
+    height: 34px;
+    cursor: pointer;
+    transition: ease 0.6s all;
+}
+
+    .menu-con:hover {
+        background-color: #41ce38;
+    }
+
+/*du lieu*/
+/*============phan loai sp================*/
+.loaisp { /*khung*/
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.model_loaisp {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.loaisp.show {
+    display: flex;
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    right: 5px;
+    top: -7px;
+    cursor: pointer;
+    font-size: 38px;
+    color: red;
+}
+
+    .close:hover {
+        transition: ease 0.6s all;
+        color: gray;
+    }
+/*show loaisp*/
+.show_loaisp {
+    display: grid;
+    grid-gap: 30px;
+    padding: 20px;
+    grid-template-columns: repeat(5, 1fr);
+}
+.dulieu_loaisp {
+    width: 210px;
+    height: 220px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 5px #00ffff;
+    display: flex;
+    flex-direction: column;
+}
+/*nut xoa*/
+.bt_xoa {
+    display: block;
+    width: 50px;
+    height: 25px;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+/*nut sua*/
+.bt_sua {
+    display: block;
+    width: 50px;
+    height: 25px;
+    color: black;
+    background-color: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+    .bt_sua:hover, .bt_xoa:hover {
+        transition: ease 0.6s all;
+        background-color: #ffa827;
+    }
+/**/
+.loaisp-item {
+    display: none; /* Ẩn tất cả sản phẩm mặc định */
+}
+
+#pagination-container {
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .pagination-button.active {
+        background-color: #097059;
+        color: white;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+    }
+
+#prev-page, #next-page {
+    background-color: #349a83;
+    color: white;
+    border: none;
+    padding: 0px 7px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*them loaisp*/
+#form-themloaisp {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px #00ffff;
+    z-index: 30;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shadow {
+    display: none;
+    position: fixed;
+    z-index: 29;
+    background-color: black;
+    opacity: 60%;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.container-themloaisp {
+    display: flex;
+    margin: 0;
+    width: 500px;
+    height: 35px;
+    margin-top: 24px;
+}
+
+#bt-submit {
+    width: 90px;
+    height: 35px;
+    color: white;
+    background-color: #048c95;
+    margin-top: 40px;
+    border-radius: 9px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+    #bt-submit:hover {
+        transition: ease 0.6s all;
+        color: black;
+        background-color: #ffa827;
+    }
+
+#file-select {
+    margin-right: 20.8px;
+}
+
+    #file-select::file-selector-button {
+        border-radius: 7px;
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+        color: white;
+        background-color: #940fba;
+        border: none;
+        cursor: pointer;
+    }
+
+/*sua loaisp*/
+#form-sualoaisp {
+    display:none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px #00ffff;
+    z-index: 30;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-sualoaisp {
+    display: flex;
+    margin: 0;
+    width: 500px;
+    height: 35px;
+    margin-top: 24px;
+}
+   #file-select{
+       
+   }
+   /*div sua*/
+   .div-sua-chon-anh{
+       display:flex;
+       flex-direction:column;
+   }
+       #bt-chon-anh{
+           width:30px;
+           height:20px;
+           border:none;
+           border-radius:8px;
+           background-color:#242d77;
+           color:white;
+           margin:auto;
+       }
+       #preview-anh{
+           width:100px;
+           height:100px;
+           display:none;
+       }
+
+#bt-submit {
+    width: 90px;
+    height: 35px;
+    color: white;
+    background-color: #048c95;
+    margin-top: 40px;
+    border-radius: 9px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+    #bt-submit:hover {
+        transition: ease 0.6s all;
+        color: black;
+        background-color: #ffa827;
+    }
+.input-loaisp {
+    width: 250px;
+    height: 30px;
+    border: 1px solid #00ffff;
+    margin: auto;
+    margin-right: 20px;
+    background-color: #443a3a;
+    outline: none;
+    color: white;
+    border-radius: 7px;
+    text-indent: 5px;
+}
