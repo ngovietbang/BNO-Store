@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
+    header("Location: index.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +20,7 @@ session_start();
         <div class="menu_header">
             <a class="a_menu_header" href="index.php?action=Admin">Trang chủ</a>
             <a class="a_menu_header" href="">Tin tức</a>
-            <a class="a_menu_header" href="index.php?action=QuanLyLoaisp">Sản phẩm</a>
+            <a class="a_menu_header" href="index.php?action=QuanLySanPham">Sản phẩm</a>
             <a class="a_menu_header" href="">Kết nối</a>
         </div>
         <!--menu header 2-->

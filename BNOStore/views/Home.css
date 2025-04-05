@@ -85,6 +85,11 @@ body {
     color: white;
     text-decoration: none;
     transition: ease 0.6s all;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
 }
 
     .a_menu_header_2::after {
@@ -117,17 +122,18 @@ body {
 }
 /*logo header*/
 .a_logo {
-    width: 70px;
-    height: 70px;
-    min-width: 70px;
+    min-width: 150px;
     min-height: 70px;
-    border-radius: 50%;
     margin: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .logo_img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 70px;
+    object-fit:cover;
 }
 /*find*/
 .find_header {
@@ -135,15 +141,57 @@ body {
 }
 
 .search {
-    width: 700px;
+    width: 610px;
     height: 40px;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     border: 0.4px solid #5694b6;
     outline: none;
     text-indent: 10px;
 }
-/*login*/
+
+@media(max-width:998px) {
+    .search {
+        width: 300px;
+    }
+}
+
+.bt-timkiem {
+    border: none;
+    width: 90px;
+    height: 39px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #525ee9;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+    .bt-timkiem:hover {
+        transition: ease 0.6s all;
+        background-color: #5694b6;
+    }
+/*gio hang*/
+.gio-hang{
+    margin:auto;
+}
+.gio-hang-a{
+    display:block;
+    width:40px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+.gio-hang-a img{
+    width:100%;
+    height: 100%;
+
+}
+
+/*login*/ /*dang nhap*/
 .form_login {
     display: none;
     position: fixed;
@@ -164,7 +212,7 @@ body {
     padding: 20px;
     border-radius: 30px;
     width: 450px;
-    height: 552px;
+    height: 612px;
     text-align: center;
     transform: translateY(-30px) scale(0.8); /* Lúc ẩn: nhỏ lại + trượt lên */
     transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -196,6 +244,33 @@ body {
         transition: ease 0.6s all;
         color: gray;
     }
+/*input dang nhap*/
+.input-dangnhap {
+    width: 384px;
+    height: 48px;
+    border-radius: 10px;
+    text-indent: 10px;
+    border: 1.5px solid #dbd6d6;
+    outline: none;
+    background-color: #fafafc;
+    font-size: 16px;
+    margin-top: 23px;
+}
+/*logo dang nhap*/
+.logo-dangnhap {
+    width: 170px;
+    height: 70px;
+    margin: auto;
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+    .logo-dangnhap img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        filter: saturate(2) hue-rotate(180deg) invert(2);
+        mix-blend-mode: multiply;
+    }
 /*bt_login*/
 .bt_submit_login {
     border: none;
@@ -216,6 +291,33 @@ body {
         color: white;
         background-color: #163d96;
     }
+/*text phuong thuc dang nhap*/
+.text-phuong-thuc-dn {
+    margin: auto;
+    font-size: 14px;
+    display: flex;
+    color: #a5a9b4;
+}
+
+    .text-phuong-thuc-dn:before {
+        content: " ";
+        border-top: 1px solid #c1c3cb;
+        align-self: center;
+        display: block;
+        flex-grow: 1;
+        width: 100px;
+        margin-right: 9px;
+    }
+
+    .text-phuong-thuc-dn:after {
+        content: " ";
+        border-top: 1px solid #c1c3cb;
+        align-self: center;
+        display: block;
+        flex-grow: 1;
+        width: 100px;
+        margin-left: 9px;
+    }
 /*quen mat khau va dang ky*/
 .quen_mat_khau {
     text-decoration: none;
@@ -231,6 +333,7 @@ body {
     font-size: 16px;
     margin: auto;
     margin-right: 0;
+    cursor:pointer;
 }
 
     .dang_ky:hover {
@@ -242,6 +345,42 @@ body {
     transition: ease 0.3s all;
     color: #2e84ed;
 }
+/*third login*/
+.third-login {
+    display: flex;
+    margin: auto;
+}
+
+.item-third-login {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.google {
+    background-image: url(http://localhost:8080/BNOStore/views/HomeImage/icon/google.png);
+}
+
+.facebook {
+    background-image: url(http://localhost:8080/BNOStore/views/HomeImage/icon/facebook.png);
+}
+
+.apple {
+    background-image: url(http://localhost:8080/BNOStore/views/HomeImage/icon/apple.png) ;
+}
+
+.twitter {
+    background-image: url(http://localhost:8080/BNOStore/views/HomeImage/icon/x.png);
+}
+
+
 /*content 1*/
 .content1 {
     display: flex;
@@ -266,9 +405,8 @@ body {
     height: 400px;
     margin: auto;
 }
+
 /*content 2 */
-
-
 /*---------------*/ /* Container chính */
 /*danh mục loại sp*/
 .danhmuc-loaisp {
@@ -282,7 +420,7 @@ body {
         margin-bottom: 15px;
         color: white;
     }
-/* Bọc danh mục + nút điều hướng */
+/* danh mục + nút điều hướng */
 .danhmuc {
     position: relative;
     overflow: hidden;
@@ -294,6 +432,7 @@ body {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
+    position: relative;
 }
 /* Mỗi trang chứa 20 sản phẩm */
 .trang-loaisp {
@@ -303,6 +442,23 @@ body {
     gap: 15px;
     min-width: 100%; /* Chiếm đủ 100% chiều rộng */
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media(max-width:785px) {
+    .trang-loaisp {
+        grid-template-columns: repeat(5, 1fr); /* 10 cột */
+        grid-template-rows: repeat(2, auto); /* 2 dòng */
+    }
+}
+
+@media(max-width:520px) {
+    .trang-loaisp {
+        grid-template-columns: repeat(2, 1fr); /* 10 cột */
+        grid-template-rows: repeat(2, auto); /* 2 dòng */
+    }
 }
 /* Mỗi danh mục */
 .loaisp-item {
@@ -311,27 +467,48 @@ body {
     padding: 10px;
     text-align: center;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     cursor: pointer;
+    width: 115px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    /*flex: 1 1 calc(10% - 15px);*/ /* Mỗi item chiếm 10% chiều rộng, trừ khoảng cách */
 }
 
     .loaisp-item:hover {
         transform: scale(1.1);
+        box-shadow: 0px 0px 8px #00c2fe;
+        transition: ease 0.4s all;
     }
-    /* Ảnh */
-    .loaisp-item img {
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-        margin-bottom: 5px;
-    }
-    /* Tên danh mục */
-    .loaisp-item p {
-        font-size: 14px;
-        color: black;
-        font-weight: bold;
-        margin: 0;
-    }
+/* Ảnh */
+.img-loaisp-item {
+    width: 80px;
+    height: 70px;
+    max-height: 80px;
+    max-width: 80px;
+    margin: auto;
+}
+/* Tên danh mục */
+.loaisp-item p {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-loaisp-item {
+    width: 90px;
+    white-space: nowrap;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    object-fit: scale-down;
+    margin: auto;
+}
 /* Nút mũi tên */
 .bt {
     position: absolute;
@@ -341,10 +518,14 @@ body {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    padding: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     z-index: 20;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
     .bt.left {
@@ -363,11 +544,150 @@ body {
 
 
 
+
+
+
 /*footer*/
 .footer {
     box-sizing: inherit;
     width: 100%;
-    height: 300px;
-    background-color: #33b5aa;
+    height: auto;
+    background-color: #11121a; /* a80= ~30% */
     margin: auto;
+    margin-top: 50px;
+    border-top:3px solid #269ef9;
+}
+/*footer 1*/
+.footer1{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+.f-div1 {
+    display: flex;
+    margin: auto;
+    gap: 90px;
+    margin-top:50px;
+}
+.f-div1-a{
+    display:block;
+    width:75px;
+    height:75px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border: 1.9px solid #37383e;
+    background-color:#0f1017;
+}
+    .f-div1-a:hover{
+        transition:ease 0.4s all;
+        background-color: black;
+        border-color: #2a2a2a;
+        box-shadow: 0px 0px 6px #00c2fe;
+    }
+    .f-div1-a:hover img {
+        filter: invert(1);
+        transition:ease 0.5s all;
+    }
+    .f-div1-a img {
+        width: 40px;
+        height: 40px;
+        filter: invert(0.4);
+        transition: ease 0.5s all;
+    }
+.f-div1 h2 {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    margin: auto;
+}
+    .f-div1 h2:after {
+        content: " ";
+        width: 100%;
+        border: 2px solid white;
+        margin-top: 5px;
+    }
+.f-div1-div {
+    display: flex;
+    gap: 60px;
+    margin: auto;
+    margin-top: 10px;
+}
+.f-div2{
+    display:flex;
+    flex-direction:column;
+    margin:auto;
+    margin-top:0;
+}
+.f-div2 h1{
+    font-weight:bold;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    font-size:22px;
+}
+    
+.f-div2 p{
+    color:#919195;
+    margin:auto;
+    margin-top:5px;
+    margin-left:0;
+}
+.f-div2 h1:after{
+    content:" ";
+    width:100%;
+    border:2px solid white;
+    margin-top:5px;
+}
+.f-div3{
+    display:flex;
+    gap:10px;
+}
+.f-div3 img{
+    width:70px;
+    height:20px;
+    margin-top:10px;
+}
+
+/*final footer*/
+.final-footer{
+    background-color:#000000;
+    width: 100%;
+    height:auto;
+    border-top: 2px solid #414141;
+    margin:auto;
+    margin-top:80px;
+    display:flex;
+    flex-direction:column;
+}
+.f2-div1{
+    margin:auto;
+    margin-top:20px;
+}
+.img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ tỷ lệ khung hình của ảnh, cắt bớt nếu cần */
+}
+.f2-div1 a {
+    color: #aeaeae;
+    text-decoration: none;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.f2-div1 a:hover{
+    transition: ease 0.5s all;
+    color:#ffa827;
+}
+
+.f2-div1 p{
+    color: #aeaeae;
+    font-size: 16px;
 }

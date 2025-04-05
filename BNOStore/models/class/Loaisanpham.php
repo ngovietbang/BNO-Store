@@ -70,15 +70,6 @@ class Loaisanpham{
         return $smtp->execute();
     }
 
-    // loi khi them loai san pham da co trong csdl
-    public function ktLoaisp($loaisp){
-        $query = "Select * From loaisanpham where loaisp = :loaisp";
-        $smtp = $this->conn->prepare($query);
-        $smtp->bindParam(":loaisp", $loaisp);
-        $smtp->execute();
-        return $smtp->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     //tim kiem loai sp
     public function TimKiemLoaisp($loaisp){
         $query = "Select * From loaisanpham Where loaisp Like :loaisp";

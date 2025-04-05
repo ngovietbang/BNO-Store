@@ -16,7 +16,6 @@ class UserController{
                 if(empty($row)){
                     header('location:index.php');
                     exit();
-                    echo "<script>alert('Sai tài khoản hoặc mật khẩu');</script>";
                 }
                 //đăng nhập thành công
                 else{
@@ -70,5 +69,108 @@ class UserController{
         exit();
     }
 
+    //hien thi user
+    public function HienThiUser(){
+        $user = new User();
+        return $user->HienThiUser();
+    }
+
+    //them user
+    public function ThemUser(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $user = new User();
+            $user->tentk = $_POST['tentk'];
+            $user->matkhau = $_POST['matkhau'];
+            $user->hovaten = $_POST['hovaten'];
+            $user->ngaysinh = $_POST['ngaysinh'];
+            $user->gioitinh = $_POST['gioitinh'];
+            $user->diachi = $_POST['diachi'];
+            $user->cccd = $_POST['cccd'];
+            $user->sdt = $_POST['sdt'];
+            $user->email = $_POST['email'];
+            $user->roles = $_POST['roles'];
+            //anh
+            $target = "views/viewUser/UserImg/";
+            $anh = $target . basename($_FILES['anh']['name']);
+            $user->anh = $anh;
+            if(isset($_POST['submit'])){
+                move_uploaded_file($_FILES['anh']['tmp_name'], $anh);
+                $user->ThemUser();
+                header('Location: index.php?action=QuanLyNguoiDung');
+            }
+        }
+    }
+
+    //xoa user
+    public function XoaUser(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $user = new User();
+            $user->id = intval($_POST['id']);
+            $deleted = $user->XoaUser($user->id);
+            if ($deleted) {
+                echo "success";
+            } else {
+                echo "error";
+            }
+        }
+    }
+
+    //lay id user 
+    public function getIdUser(){
+        $user = new User();
+        if(isset($_GET['id'])){
+            $id = intval($_GET['id']);
+            $data = $user->getIdUser($id);
+            $data['anh'] = "http://localhost:8080/BNOStore/" . $data['anh'];
+            if($data){
+                echo json_encode(['success' => true, 'data' => $data]);
+            }
+            else{
+                echo json_encode(['success' => false]);
+            }
+        }
+    }
+
+    //sua user
+    public function SuaUser(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $user = new User();
+            $user->id = intval($_POST['id']);
+            $user->matkhau = $_POST['matkhau'];
+            $user->hovaten = $_POST['hovaten'];
+            $user->ngaysinh = $_POST['ngaysinh'];
+            $user->gioitinh = $_POST['gioitinh'];
+            $user->diachi = $_POST['diachi'];
+            $user->cccd = $_POST['cccd'];
+            $user->sdt = $_POST['sdt'];
+            //anh
+            $target = "./views/viewUser/UserImg/";
+            $anh = $target . basename($_FILES['anh']['name']);
+            //co thay doi anh
+            if(!empty($_FILES['anh']['name'])){
+                //tai anh len thanh cong
+                if(move_uploaded_file($_FILES['anh']['tmp_name'], $anh)){
+                    $user->anh = $anh;
+                    $success = $user->SuaUserHaveImg($user->id);
+                    header('Location: index.php?action=QuanLyNguoiDung');
+                }
+                //loi tai anh
+                else{
+                    echo json_encode(['success' => false , 'message' => 'Lỗi tải ảnh lên!']);
+                    return;
+                }
+            }
+            //khong thay doi anh
+            else{
+                $success = $user->SuaUserNoImg($user->id);
+                header('Location: index.php?action=QuanLyNguoiDung');
+            }
+        }
+    }
+
+    //kh dang ky user
+    public function dangky(){
+        
+    }
 
 }

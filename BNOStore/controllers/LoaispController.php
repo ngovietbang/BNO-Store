@@ -45,7 +45,7 @@ class LoaispController{
 
     //lay id loai sp
     public function getIdLoaisp(){
-         $loaisp = new Loaisanpham();
+        $loaisp = new Loaisanpham();
         if (isset($_GET['idloaisp'])) {
             $id = intval($_GET['idloaisp']);
             $data = $loaisp->getIdLoaisp($id);
@@ -78,8 +78,6 @@ class LoaispController{
                 if (move_uploaded_file($_FILES['anh']['tmp_name'], $anh)) {
                     // Cập nhật ảnh vào database
                     $success = $loaisp->UpdateLoaispHaveImg($idLoaisp);
-                    session_start();
-                    $_SESSION['show_loaisp'] = true;
                     header('Location: index.php?action=QuanLyLoaisp');
                 } else {
                     echo json_encode(["success" => false, "message" => "Lỗi tải ảnh lên!"]);

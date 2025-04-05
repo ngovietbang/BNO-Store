@@ -1,12 +1,14 @@
 <?php
 require_once('./controllers/UserController.php');
-require_once('./controllers/ProductController.php');
+require_once('./controllers/SanPhamController.php');
 require_once('./controllers/LoaispController.php');
+require_once('./controllers/TheLoaiController.php');
 
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $userCtrl = new UserController();
-$productCtrl = new ProductController();
+$sanphamCtrl = new SanPhamController();
 $loaispController = new LoaispController();
+$theloaiController = new TheLoaiController();
 
 switch($action){
 
@@ -30,6 +32,28 @@ switch($action){
     //admin đăng nhập
     case 'Admin':
         include('./views/Admin/HomeAdmin.php'); 
+        break;
+    
+    //mo form admin quan ly nguoi dung
+    case 'QuanLyNguoiDung':
+        $rowUser = $userCtrl->HienThiUser();
+        include('./views/Admin/AdminQLNguoiDung.php');
+        break;
+    //them nguoi dung
+    case 'ThemUser':
+        $userCtrl->ThemUser();
+        break;
+    //xoas user
+    case 'XoaUser':
+        $userCtrl->XoaUser();
+        break;
+    //lay id user
+    case 'getIdUser':
+        $userCtrl->getIdUser();
+        break;
+    //sua user
+    case 'SuaUser':
+        $userCtrl->SuaUser();
         break;
 
 
@@ -70,17 +94,72 @@ switch($action){
 
 //phần thể loại
     //hiển thị thể loại
-    case 'Hienthitheloai':
+    case 'ShowTheLoai':
+        $theloaiController->ShowTheLoai();
         break;
-
+    //mở trang quản lý thể loại
+    case 'QuanLyTheLoai':
+        $vloaisp = $loaispController->ShowLoaisp();//hien thi loai sp
+        $rowTheLoai = $theloaiController->ShowTheLoai();
+        include('./views/Admin/AdminQLTheLoai.php');
+        break;
+    //xoa the loai
+    case 'XoaTheLoai':
+        $theloaiController->XoaTheLoai();
+        break;
+    //them the loai
+    case 'ThemTheLoai':
+        $theloaiController->ThemTheLoai();
+        break;
+    //tim kiem the loai
+    case 'TimKiemTheLoai':
+        $vloaisp = $loaispController->ShowLoaisp(); //hien thi loai sp
+        $rowTheLoai = $theloaiController->TimKIemTheLoai();
+        include('./views/Admin/AdminQLTheLoai.php');
+        break;
+    //get id the loai 
+    case 'getIdTheLoai':
+        $theloaiController->getIdTheLoai();
+        break;
+    //cap nhat the loai
+    case 'SuaTheLoai':
+        $theloaiController->SuaTheLoai();
+        break;
+    //hien thi the loai theo loaisp
+    case 'HienThiTheLoaiTheoLoaisp':
+        $theloaiController->HienThiTheoLoaisp();
+        break;
 
 
 //phần sản phẩm
-    //hien thi san pham
-    case 'ShowProduct':
-        $productCtrl->HienThiSP();
+    //mo form quan ly san pham
+    case 'QuanLySanPham':
+        $vloaisp = $loaispController->ShowLoaisp();
+        $rowSanPham = $sanphamCtrl->HienThiSP();
+        include('./views/Admin/AdminQLSanPham.php');
         break;
-
+    //them san pham
+    case 'ThemSanPham':
+        $sanphamCtrl->ThemSanPham();
+        break;
+    //xoa san pham
+    case 'XoaSanPham':
+        $sanphamCtrl->XoaSanPham();
+        break;
+    //lay id san pham
+    case 'getIdSanPham':
+        $sanphamCtrl->getIdSanPham();
+        break;
+    //sua san pham
+    case 'SuaSanPham':
+        $sanphamCtrl->SuaSanPham();
+        break;
+    //tim kiem san pham
+    case 'TimKiemSanPham':
+        $vloaisp = $loaispController->ShowLoaisp();
+        $rowSanPham = $sanphamCtrl->TimKiemSp();
+        include('./views/Admin/AdminQLSanPham.php');
+        break;
 
 
     //mặc định khi vào trang
