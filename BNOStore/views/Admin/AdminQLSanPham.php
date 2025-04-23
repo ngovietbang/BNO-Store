@@ -85,7 +85,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
                                 <p>ID: <span style="color:red"><?php echo $row['idsp']; ?></span></p>
                                 <p title="<?php echo $row['loaisp']; ?>">Loại sản phẩm: <span style="color:red"><?php echo $row['loaisp']; ?></span></p>
                                 <p title="<?php echo $row['tentheloai']; ?>">Tên thể loại: <span style="color:red;"><?php echo $row['tentheloai']; ?></span></p>
-                                <p title="<?php echo $row['tensp']; ?>">Tên sản phẩm: <span style="color:red;"><?php echo $row['tensp']; ?></span></p>
+                                <p title="<?php echo htmlspecialchars($row['tensp']); ?>">Tên sản phẩm: <span style="color:red;"><?php echo $row['tensp']; ?></span></p>
                                 <p title="<?php echo $row['giaban']; ?>">Giá bán: <span style="color:red;"><?php echo $row['giaban']; ?> VND</span></p>
                                 <p title="<?php echo $row['soluong']; ?>">Số lượng: <span style="color:red;"><?php echo $row['soluong']; ?></span></p>
                             </div>
@@ -418,7 +418,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
         </div>
     </div>
 
-    <!--script mở, đóng form loaisp-->
+    <!--script mở, đóng form-->
     <script>
         // Đóng modal khi nhấn vào dấu "X"
         document.querySelector(".close").addEventListener("click", function () {

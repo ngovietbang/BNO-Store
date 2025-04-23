@@ -55,7 +55,7 @@ body {
 
 /*mennu header 2*/
 .menu_header_2 {
-    width: 190px;
+    width: 230px;
     margin: auto;
     display: flex;
 }
@@ -105,6 +105,7 @@ body {
     height: 100vh;
     background-color: rgb(45, 45, 45,0.9);
 }
+
 .menu-trai-user {
     display: flex;
     flex-direction: column;
@@ -171,6 +172,7 @@ body {
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
 }
+
 .admin-user {
     position: relative;
     display: flex;
@@ -212,48 +214,51 @@ body {
         color: gray;
     }
 /*tim kiem*/
-.admin-tim-kiem{
-    display:flex;
-    margin:auto;
-    margin-top:20px;
-    margin-bottom:0;
+.admin-tim-kiem {
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
-.input-timkiem{
-    width:400px;
-    height:35px;
-    border-radius:10px;
-    border:1px solid #2e42c7;
-    outline:none;
-    text-indent:7px;
-    font-size:15px;
-    margin-right:5px;
+
+.input-timkiem {
+    width: 400px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid #2e42c7;
+    outline: none;
+    text-indent: 7px;
+    font-size: 15px;
+    margin-right: 5px;
 }
-.bt-timkiem{
-    width:90px;
-    height:34px;
-    color:white;
-    background-color:#da6122;
-    border-radius:6px;
-    font-size:15px;
-    cursor:pointer;
-    border:none;
-    margin:auto;
-    font-weight:bold;
-    margin-left:5px;
+
+.bt-timkiem {
+    width: 90px;
+    height: 34px;
+    color: white;
+    background-color: #da6122;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+    font-weight: bold;
+    margin-left: 5px;
 }
-    .bt-timkiem:hover{
-        transition:ease 0.6s all;
-        background-color:#8d6a49
+
+    .bt-timkiem:hover {
+        transition: ease 0.6s all;
+        background-color: #8d6a49
     }
 /*show loaisp*/
 .show_loaisp {
-    margin-top:19px;
+    margin-top: 19px;
     display: grid;
     grid-gap: 30px;
     padding: 20px;
     grid-template-columns: repeat(5, 1fr);
 }
-   /*the p*/
+    /*the p*/
     .show_loaisp p {
         margin: 0;
         margin: auto;
@@ -261,11 +266,13 @@ body {
         white-space: nowrap; /* Không xuống dòng */
         overflow: hidden; /* Ẩn phần dư */
         text-overflow: ellipsis; /* Thêm dấu "..." khi chữ quá dài */
-        width:195px;
+        width: 195px;
     }
-    .show_loaisp img{
-        border-radius:6px;
+
+    .show_loaisp img {
+        border-radius: 6px;
     }
+
 .dulieu_loaisp {
     width: 210px;
     height: 220px;
@@ -408,10 +415,11 @@ body {
     height: 35px;
     margin-top: 24px;
 }
+
 .container-themuser {
     display: flex;
     margin: 0;
-    width:auto;
+    width: auto;
     height: 35px;
     margin-top: 24px;
 }
@@ -428,19 +436,21 @@ body {
     border-radius: 7px;
     text-indent: 5px;
 }
+
 .them_user {
     width: 250px;
     height: 30px;
     border: 1px solid #00ffff;
     margin: auto;
-    margin-right:0;
-    margin-left:8px;
+    margin-right: 0;
+    margin-left: 8px;
     background-color: #443a3a;
     outline: none;
     color: white;
     border-radius: 7px;
     text-indent: 5px;
 }
+
 #bt-submit {
     width: 90px;
     height: 35px;
@@ -454,6 +464,22 @@ body {
 }
 
     #bt-submit:hover {
+        transition: ease 0.6s all;
+        color: black;
+        background-color: #ffa827;
+    }
+#bt-submit-sua {
+    width: 90px;
+    height: 35px;
+    color: white;
+    background-color: #048c95;
+    margin-top: 40px;
+    border-radius: 9px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+    #bt-submit-sua:hover {
         transition: ease 0.6s all;
         color: black;
         background-color: #ffa827;
@@ -476,7 +502,7 @@ body {
 
 /*sua loaisp*/ /*sua*/
 #form-sualoaisp {
-    display:none;
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -499,11 +525,12 @@ body {
     margin-top: 24px;
 }
 
-   /*div sua*/
-   .div-sua-chon-anh{
-       display:flex;
-       flex-direction:column;
-   }
+/*div sua*/
+.div-sua-chon-anh {
+    display: flex;
+    flex-direction: column;
+}
+
 #bt-chon-anh {
     width: 90px;
     height: 30px;
@@ -516,6 +543,7 @@ body {
     margin-top: 15px;
     cursor: pointer;
 }
+
 #preview-anh {
     width: 100px;
     height: 100px;
@@ -531,7 +559,7 @@ body {
     height: 35px;
     color: white;
     background-color: #048c95;
-    margin-top: 40px;
+    margin-top: 37px;
     border-radius: 9px;
     border: none;
     font-size: 17px;
@@ -543,6 +571,7 @@ body {
         color: black;
         background-color: #ffa827;
     }
+
 .input-loaisp {
     width: 250px;
     height: 30px;
@@ -554,4 +583,314 @@ body {
     color: white;
     border-radius: 7px;
     text-indent: 5px;
+}
+
+/*Phan quan ly ban hang*/
+/*phan thong báo*/
+.menu-thongbao {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+
+    .menu-thongbao img {
+        width: 24px;
+        height: 24px;
+        margin: 0;
+    }
+
+    .menu-thongbao span {
+        color: white;
+        margin: auto;
+    }
+
+.so-thongbao {
+    position: absolute;
+    top: -14px;
+    left: -4px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: white;
+    border: 0.1px solid red;
+    color: black;
+    font-size: 12px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+}
+
+.menu-hienthi-thongbao {
+    display: none;
+    position: fixed;
+    z-index: 1015;
+    background-color: rgb(45, 45, 45,1);
+    right: 330px;
+    top: 47px;
+    box-shadow: 0px 0px 8px #00ffff;
+    border-radius: 4px;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 480px;
+    height: 600px;
+}
+
+    .menu-hienthi-thongbao h1 {
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 16px;
+        color: white;
+        background-color: green;
+        display: flex;
+        text-indent: 15px;
+        align-items: center;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        display: block;
+        width: 100%;
+        height: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+.chitiet-thongbao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    border-top: 1px solid #9f9f9f;
+    background-color: #f07676;
+}
+
+    .chitiet-thongbao a {
+        text-decoration: none;
+        display: block;
+        width: 90px;
+        height: 30px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #94680a;
+        font-size: 14px;
+        margin: auto;
+        margin-right: 19px;
+        margin-bottom: 15px;
+    }
+
+        .chitiet-thongbao a:hover {
+            transition: ease 0.4s all;
+            background-color: #048c95;
+        }
+
+.thongbao-ngay-tacdong {
+    color: #494949;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.chitiet-thongbao-div1 {
+    margin-left: 15px;
+    margin-top: 10px;
+    display: flex;
+}
+
+    .chitiet-thongbao-div1 img {
+        width: 90px;
+        height: 90px;
+        margin: 0;
+    }
+
+.chitiet-thongbao-div2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+    .chitiet-thongbao-div2 p {
+        margin: 0;
+        margin-top: 7px;
+    }
+
+/*hien thi du lieu don hang*/
+.content-donhang {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+.menu-trai-donhang {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    background-color: rgb(45, 45, 45,0.9);
+}
+
+.donhang {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.hienthi-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*grid-template-columns: auto auto;*/
+    gap: 40px;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hienthi-div1 {
+    box-shadow: 0px 0px 8px #00ffff;
+    width: 520px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 4px;
+}
+
+.hienthi-div2 {
+    display: flex;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+    .hienthi-div2 p {
+        margin: 0;
+        max-width: 450px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .hienthi-div2 span {
+        color: red;
+        margin: 0;
+        margin-left: 5px;
+    }
+
+.hienthi-div3 {
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-top: 1px solid #ffa827;
+}
+
+.bt-action1 {
+    display: block;
+    width: 120px;
+    height: 35px;
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+    .bt-action1:hover, .bt-action2:hover, .bt-action3:hover {
+        transition: ease 0.4s all;
+        background-color: #048c95;
+    }
+
+.bt-action2 {
+    display: block;
+    width: 120px;
+    height: 35px;
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.bt-action3 {
+    display: block;
+    width: 120px;
+    height: 35px;
+    color: white;
+    background-color: #454545;
+    border-radius: 4px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-decoration: none;
+    margin-top: 20px;
+}
+/*phan trang*/
+#phantrang-container {
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#pagi{
+    display: flex;
+    gap: 5px;
+}
+
+.pagi-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .pagi-button.active {
+        background-color: #097059;
+        color: white;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+    }
+
+#truoc, #sau {
+    background-color: #349a83;
+    color: white;
+    border: none;
+    padding: 0px 7px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

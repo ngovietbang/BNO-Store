@@ -90,4 +90,26 @@ class SanPham{
         return $smtp->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //chi tiet sp
+    public function ChiTietSanPham($idsp)
+    {
+        $query = "select * From sanpham Where idsp = :id";
+        $smtp = $this->conn->prepare($query);
+        $smtp->bindParam(":id", $idsp);
+        $smtp->execute();
+        return $smtp->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //da tim kiem
+    public function DaTimKiem($keyword){
+        $query = "SELECT * FROM sanpham WHERE loaisp LIKE :loaisp OR tensp LIKE :tensp OR tentheloai LIKE :tentheloai ORDER BY idsp DESC";
+        $smtp = $this->conn->prepare($query);
+        $keyword = "%" . $keyword . "%";
+        $smtp->bindParam(":loaisp", $keyword);
+        $smtp->bindParam(":tentheloai", $keyword);
+        $smtp->bindParam(":tensp", $keyword);
+        $smtp->execute();
+        return $smtp->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

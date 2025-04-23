@@ -230,7 +230,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
                 </div>
                 <!--Ten the loai-->
                 <div class="container-sualoaisp">
-                    <label style="margin:auto;margin-left:20px;">Tên loại sản phẩm:</label>
+                    <label style="margin:auto;margin-left:20px;">Tên thể loại:</label>
                     <input id="tentheloai-sua" class="input-loaisp" type="text" name="tentheloai" required />
                 </div>
                 <!--anh-->

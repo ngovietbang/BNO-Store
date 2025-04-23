@@ -48,7 +48,7 @@ class SanPhamController{
         }
     }
 
-    //lay id san pham 
+    //lay id san pham
     public function getIdSanPham(){
         $sanpham = new SanPham();
         if (isset($_GET['idsp'])) {
@@ -73,7 +73,7 @@ class SanPhamController{
             $sanpham->tensp = $_POST['tensp'];
             $sanpham->giaban = $_POST['giaban'];
             $sanpham->soluong = $_POST['soluong'];
-            //anh 
+            //anh
             $target = "views/viewSanPham/SanPhamImg/";
             $anh = $target . basename($_FILES['anh']['name']);
             $sanpham->anh = $anh;
@@ -97,14 +97,32 @@ class SanPhamController{
         }
     }
 
-    //tim kiem sp 
+    //tim kiem sp
     public function TimKiemSp(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $sanpham = new SanPham();
             $keyword = $_POST['timkiemtensp'];
             if(isset($_POST['timkiemtensp'])){
                 return $sanpham->TimKiemSp($keyword);
-            }  
+            }
+        }
+    }
+
+    //hien thi chi tiet sp
+    public function ChiTietSp(){
+        $sanpham = new SanPham();
+        $id = intval($_GET['idsp']);
+        return $sanpham->ChiTietSanPham($id);
+    }
+
+    //tim kiem san pham theo da dot
+    public function DaTimKiem(){
+        if($_SERVER['REQUEST_METHOD'] === 'GET'){
+            $sanpham = new SanPham();
+            if(isset($_GET['keyword'])){
+                $keyword = $_GET['keyword'];
+                return $sanpham->DaTimKiem($keyword);
+            }
         }
     }
 

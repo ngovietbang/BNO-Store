@@ -108,4 +108,52 @@ class User{
         return $smtp->execute();
     }
 
+    //dang ky user
+    public function dangky(){
+        $query = "Insert Into users Values(:id, :tentk, :matkhau, :hovaten, :ngaysinh, :gioitinh, :diachi, :cccd, :sdt, :email, :roles, :anh)";
+        $smtp = $this->conn->prepare($query);
+        $smtp->bindParam(":id", $this->id);
+        $smtp->bindParam(":tentk", $this->tentk);
+        $smtp->bindParam(":matkhau", $this->matkhau);
+        $smtp->bindParam(":hovaten", $this->hovaten);
+        $smtp->bindParam(":ngaysinh", $this->ngaysinh);
+        $smtp->bindParam(":gioitinh", $this->gioitinh);
+        $smtp->bindParam(":diachi", $this->diachi);
+        $smtp->bindParam(":cccd", $this->cccd);
+        $smtp->bindParam(":sdt", $this->sdt);
+        $smtp->bindParam(":email", $this->email);
+        $smtp->bindParam(":roles", $this->roles);
+        $smtp->bindParam(":anh", $this->anh);
+        return $smtp->execute();
+    }
+
+    //lay thong tin user bang ten tk
+    public function GetUser($tentk){
+        $query = "Select * From users WHERE tentk = :tentk";
+        $smtp = $this->conn->prepare($query);
+        $smtp->bindParam(":tentk", $tentk);
+        $smtp->execute();
+        return $smtp->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //tim kiem user
+    public function TimKiemUser($hovaten)
+    {
+        $query = "Select * From users Where hovaten LIKE :hovaten ORDER BY id DESC";
+        $smtp = $this->conn->prepare($query);
+        $hovaten = "%" . $hovaten . "%";
+        $smtp->bindParam(":hovaten", $hovaten, PDO::PARAM_STR);
+        $smtp->execute();
+        return $smtp->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //lay thong tin user bang id
+    public function getUserById($id){
+        $query = "Select * From users Where id = :id";
+        $smtp = $this->conn->prepare($query);
+        $smtp->bindParam(":id", $id);
+        $smtp->execute();
+        return $smtp->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

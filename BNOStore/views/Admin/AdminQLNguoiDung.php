@@ -70,7 +70,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
                 <!--nut close-->
                 <span class="close">&times;</span>
                 <!--tim kiem loai sp-->
-                <form action="index.php?action=TimKiemSanPham" method="post" class="admin-tim-kiem" id="form_search">
+                <form action="index.php?action=TimKiemUser" method="post" class="admin-tim-kiem" id="form_search">
                     <input id="search" type="text" placeholder="Nhập họ tên người dùng cần tìm kiếm" class="input-timkiem" name="timkiem" />
                     <button class="bt-timkiem" id="bt_search" type="submit">Tìm kiếm</button>
                 </form>
@@ -199,7 +199,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
                 </div>
             </div>
 
-            <!--them the loai--><!--them-->
+            <!--them user--><!--them-->
             <!---->
             <div class="shadow" id="shadow"></div>
             <!--form them nguoi dung-->
@@ -289,6 +289,45 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
                 <!---->
                 <input id="bt-submit" class="bt-them" type="submit" name="submit" value="Thêm" />
             </form>
+
+            <!--script tự động điền tentk-->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const roleSelect = document.querySelector("select[name='roles']");
+                    const tentkInput = document.getElementById("tentk");
+
+                    // Mapping role -> prefix
+                    const rolePrefixes = {
+                        "Admin": "ad",
+                        "Shipper": "sp",
+                        "Kế toán": "kt",
+                        "Nhân viên kho": "nvk"
+                    };
+
+                    // Biến đếm cho từng vai trò (có thể khởi tạo từ 1)
+                    const counters = {
+                        ad: 1,
+                        sp: 1,
+                        kt: 1,
+                        nvk: 1
+                    };
+
+                    roleSelect.addEventListener("change", function () {
+                        const selectedRole = this.value;
+                        const prefix = rolePrefixes[selectedRole];
+
+                        if (prefix) {
+                            const count = counters[prefix]++;
+                            tentkInput.value = `bno_${prefix}${count}_hn`;
+                        } else {
+                            tentkInput.value = "";
+                        }
+                    });
+                });
+            </script>
+
+
+
 
             <!--scrip kiem tra truoc khi submit-->
             <script>
@@ -394,7 +433,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
                 </div>
 
                 <!---->
-                <input id="bt-submit" class="bt-submit-sua" type="submit" name="submit" value="Cập nhật" />
+                <input id="bt-submit-sua" class="bt-submit-sua" type="submit" name="submit" value="Cập nhật" />
             </form>
 
             <!--ajax sửa loaisp-->
